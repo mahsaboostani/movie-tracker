@@ -1,10 +1,32 @@
 <template>
   <div class="row">
     <div class="col-md" v-for="item in movies.items" :key="item.id">
-      <div class="card border-0 justify-content-center" style="width: 10rem">
+      <div
+        class="card border-0"
+        style="width: 10rem; height: 25rem; font-size: 13px"
+      >
         <img class="card-img-top" :src="item.image" alt="" />
-        <div class="card-body">
-          <p>{{ item.fullTitle }}</p>
+
+        <div class="list-group list-group-flush">
+          <div class="list-group-item" style="height: 5rem">
+            <p>{{ item.title }}</p>
+          </div>
+
+          <div class="list-group-item dropdown">
+            <button
+              class="btn btn-dark dropdown-toggle m-0 p-1"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              More Info
+            </button>
+
+            <h6 class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              {{ item.crew }}
+            </h6>
+          </div>
         </div>
       </div>
     </div>
